@@ -1,5 +1,5 @@
-#creiamo un nodo a cui associamo lo stato, il genitore, l'azione,
-#il costo e la lunghezza
+#creiamo un nodo a cui associamo lo stato, il genitore, l'azione, il costo e la lunghezza
+#esempio per creare il primo nodo del nostro albero: node = Node(state='Corato', parent=None, action=None, cost=1, depth=1)
 class Node:
     def __init__(self, state, parent, action, cost, depth):
         self.state = state
@@ -7,6 +7,12 @@ class Node:
         self.action = action
         self.cost = cost
         self.depth = depth
+
+    # built-in function che ritorna una stringa e serve per vedere in console la rappresentazione dell'oggetto
+    def __repr__(self):
+        return f'State: {self.state}\tParent: {self.parent}\t' \
+                f'Action: {self.action}, Cost: {self.cost}, Depth: {self.depth}'
+
 
     #given the state and the action return another node of the tree
     #this function create an object of the node class
@@ -18,3 +24,11 @@ class Node:
                     action=action,
                     cost=self.cost + cost,
                     depth=self.depth + 1)
+
+    def path(self):
+        path = []
+        node = self
+        while node.parent:
+            path.append(node.action)
+            node = node.parent
+        return path

@@ -8,7 +8,8 @@ class Problem:
     # ritorna lo state e l'action
     def successors(self, state):
         possible_actions = self.actions(state)
-        return [self.result(state, a) for a in possible_actions]
+        # return the state with the action
+        return [(self.result(state, a), a) for a in possible_actions]
 
     # definisco la funzione actions che prende come parametro lo stato attuale
     # per esempio se mi trovo ad Andria mi deve restiruire Corato e Trani che sono le azioni
@@ -21,7 +22,8 @@ class Problem:
     def result(self, state=None, action=None):
         return action
 
-    # se abbiamo raggiunto il goal lo ritorniamo
+    # se abbiamo raggiunto il goal restituisce true altrimenti false
+    # esempio: map_problem.goal_test('Corato') -> true se il goal_state = 'Corato
     def goal_test(self, state):
         return state == self.goal_state
 
