@@ -1,6 +1,4 @@
 # Map Problem
-
---- 
 ## First Hands-On Lesson
 
 Pseudocode:
