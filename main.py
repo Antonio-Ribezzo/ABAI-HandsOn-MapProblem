@@ -1,7 +1,7 @@
 # import the environment and other
 from input.roads import roads_small
 from src.Problem import Problem
-from src.startegies import BreadthFirst
+from src.startegies import *
 from src.Search import TreeSearch
 # load environment
 streets = roads_small

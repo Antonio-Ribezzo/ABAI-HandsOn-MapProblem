@@ -10,8 +10,7 @@ class Node:
 
     # built-in function che ritorna una stringa e serve per vedere in console la rappresentazione dell'oggetto
     def __repr__(self):
-        return f'State: {self.state}\tParent: {self.parent}\t' \
-                f'Action: {self.action}, Cost: {self.cost}, Depth: {self.depth}'
+        return f'({self.state})'
 
 
     #given the state and the action return another node of the tree
@@ -31,4 +30,5 @@ class Node:
         while node.parent:
             path.append(node.action)
             node = node.parent
+        path = list(reversed(path))
         return path

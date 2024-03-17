@@ -12,13 +12,13 @@ class TreeSearch:
                     action=None,
                     cost=0,
                     depth=0)
-
         # loop
         while True:
             # check the goal test
-            goal_check = self.problem.goal_test(node.state)
-            if goal_check:
-                return 'Ok', node.path
+            if self.problem.goal_test(node.state):
+                return 'Ok', node.path()
+
+            self.strategy.add_visited(node.state)
 
             # expand the node
             # creo prima lo state
