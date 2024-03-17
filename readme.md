@@ -1,6 +1,4 @@
-# Map Problem
-## First Hands-On Lesson
-
+# Map Problem - First Hands-On Lesson
 Pseudocode:
 1. Load the environment (in main)
 2. Formulate the problem (formulate the agent)
