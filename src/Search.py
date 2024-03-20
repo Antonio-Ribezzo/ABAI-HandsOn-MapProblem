@@ -17,7 +17,7 @@ class TreeSearch:
             # check the goal test
             if self.problem.goal_test(node.state):
                 return 'Ok', node.path()
-
+            # add visited for the graph search
             self.strategy.add_visited(node.state)
 
             # expand the node
